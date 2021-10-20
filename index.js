@@ -7,7 +7,7 @@ const dbUri = "mongodb+srv://m001-student:m001-mongodb-basics@sandbox.nk9yi.mong
 
 mongoose.connect(dbUri, () => {
     console.log('Database is connected')
-    app.listen(3000, () => {
+    app.listen(process.env.PORT || 3000, () => {
         console.log('listening at localhost:3000');
     })
 })
