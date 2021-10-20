@@ -2,13 +2,14 @@ const express = require('express')
 const mongoose = require('mongoose')
 const Gallery = require('./models/gallery')
 const app = express()
+const port = 3000
 
 const dbUri = "mongodb+srv://m001-student:m001-mongodb-basics@sandbox.nk9yi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
 mongoose.connect(dbUri, () => {
     console.log('Database is connected')
-    app.listen(process.env.PORT || 3000, () => {
-        console.log('listening at localhost:3000');
+    app.listen(process.env.PORT || port, () => {
+        console.log(`listening at localhost:${port}`);
     })
 })
 
